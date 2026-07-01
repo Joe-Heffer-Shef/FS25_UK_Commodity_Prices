@@ -1,5 +1,7 @@
 # FS25 UK Commodity Prices
 
+[![Build](https://github.com/Joe-Heffer-Shef/FS25_UK_Commodity_Prices/actions/workflows/build.yml/badge.svg)](https://github.com/Joe-Heffer-Shef/FS25_UK_Commodity_Prices/actions/workflows/build.yml)
+
 A [Farming Simulator 25](https://www.farming-simulator.com/) mod that adjusts in-game crop sell prices to approximate real UK agricultural commodity market values. Built for the Moss Valley FS25 workshop project.
 
 ## What it does
