@@ -26,10 +26,11 @@ jobs:
       - uses: actions/checkout@v7
 
       - name: Package mod
-        run: zip -r FS25_UKPrices.zip FS25_UKPrices
+        run: cd FS25_UKPrices && zip -r ../FS25_UKPrices.zip .
 
       - name: Upload artifact
         uses: actions/upload-artifact@v7
         with:
           name: FS25_UKPrices
           path: FS25_UKPrices.zip
+          compression-level: 0

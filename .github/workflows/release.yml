@@ -34,7 +34,7 @@ jobs:
           fi
 
       - name: Package mod
-        run: zip -r FS25_UKPrices.zip FS25_UKPrices
+        run: cd FS25_UKPrices && zip -r ../FS25_UKPrices.zip .
 
       - name: Create release
         uses: softprops/action-gh-release@v3
