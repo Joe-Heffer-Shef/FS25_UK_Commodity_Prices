@@ -35,6 +35,10 @@ Prices are set at runtime by `FS25_UK_Commodity_Prices/scripts/PriceOverride.lua
    - Windows: `%USERPROFILE%\Documents\My Games\FarmingSimulator2025\mods`
 3. Launch Farming Simulator 25 and enable **UK Commodity Prices** in the mod selection screen when starting or loading a savegame.
 
+## Documentation
+
+See [docs/](docs/README.md) for contributor guides, release steps, and workshop setup notes.
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup and guidelines.
