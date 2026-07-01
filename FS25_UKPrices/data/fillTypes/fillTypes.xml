@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<fillTypes>
+    <!-- Feed wheat ~£175/t -->
+    <fillType name="WHEAT">
+        <economy pricePerLitre="0.130" />
+    </fillType>
+
+    <!-- Feed barley ~£165/t -->
+    <fillType name="BARLEY">
+        <economy pricePerLitre="0.123" />
+    </fillType>
+
+    <!-- Oilseed rape (canola) ~£380/t -->
+    <fillType name="CANOLA">
+        <economy pricePerLitre="0.355" />
+    </fillType>
+
+    <!-- Ware potatoes ~£175/t -->
+    <fillType name="POTATO">
+        <economy pricePerLitre="0.164" />
+    </fillType>
+
+    <!-- Sugar beet ~AHDB contract reference price -->
+    <fillType name="SUGARBEET">
+        <economy pricePerLitre="0.042" />
+    </fillType>
+</fillTypes>

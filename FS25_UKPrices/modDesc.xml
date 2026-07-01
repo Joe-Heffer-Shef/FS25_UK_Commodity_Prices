@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<modDesc descVersion="79">
+    <author>TUOS Workshop</author>
+    <version>1.0.0.0</version>
+    <title>
+        <en>UK Commodity Prices</en>
+    </title>
+    <description>
+        <en>Adjusts commodity prices to approximate UK market values for the Moss Valley FS25 workshop project</en>
+    </description>
+    <multiplayer supported="true" />
+</modDesc>
