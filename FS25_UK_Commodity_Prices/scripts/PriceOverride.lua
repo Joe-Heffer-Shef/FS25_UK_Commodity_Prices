@@ -23,8 +23,10 @@ UKPrices.PRICES_PER_LITER = {
 }
 
 function UKPrices.apply()
+    local fillTypeManager = g_fillTypeManager
+
     for fillTypeName, pricePerLiter in pairs(UKPrices.PRICES_PER_LITER) do
-        local fillType = g_fillTypeManager:getFillTypeByName(fillTypeName)
+        local fillType = fillTypeManager:getFillTypeByName(fillTypeName)
 
         if fillType ~= nil then
             fillType.pricePerLiter = pricePerLiter

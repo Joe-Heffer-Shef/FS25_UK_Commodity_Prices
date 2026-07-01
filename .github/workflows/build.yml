@@ -30,9 +30,24 @@ jobs:
       - name: Run luacheck
         run: luacheck FS25_UK_Commodity_Prices/scripts
 
+  test-lua:
+    name: Test Lua
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install Lua and busted
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lua5.1 liblua5.1-0-dev luarocks
+          sudo luarocks install busted
+
+      - name: Run busted test suite
+        run: busted
+
   build:
     name: Build mod ZIP
-    needs: [validate, lint-lua]
+    needs: [validate, lint-lua, test-lua]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
