@@ -24,4 +24,54 @@
     <fillType name="SUGARBEET">
         <economy pricePerLitre="0.042" />
     </fillType>
+
+    <!-- Milling oats ~£220/t (base game fillType is OAT, density 0.50 kg/L) -->
+    <fillType name="OAT">
+        <economy pricePerLitre="0.110" />
+    </fillType>
+
+    <!-- Feed maize ~£180/t (density 0.80 kg/L) -->
+    <fillType name="MAIZE">
+        <economy pricePerLitre="0.144" />
+    </fillType>
+
+    <!-- Sunflower seed ~£375/t, EU/import reference, not commonly grown in UK (density 0.35 kg/L) -->
+    <fillType name="SUNFLOWER">
+        <economy pricePerLitre="0.131" />
+    </fillType>
+
+    <!-- Soybean ~£400/t, EU/import reference, minimal UK production (density 0.70 kg/L) -->
+    <fillType name="SOYBEAN">
+        <economy pricePerLitre="0.280" />
+    </fillType>
+
+    <!-- UK farmgate milk price ~40 ppl (highly volatile; sold per litre directly, density 1.03 kg/L) -->
+    <fillType name="MILK">
+        <economy pricePerLitre="0.400" />
+    </fillType>
+
+    <!-- Wheat/barley straw, GB big bale ~£100/t (density 0.06 kg/L) -->
+    <fillType name="STRAW">
+        <economy pricePerLitre="0.006" />
+    </fillType>
+
+    <!-- Grass silage feed value, on-farm nominal ~£32/t (density 0.30 kg/L) -->
+    <fillType name="GRASS_WINDROW">
+        <economy pricePerLitre="0.010" />
+    </fillType>
+
+    <!-- Baled hay ~£120/t (density 0.07 kg/L) -->
+    <fillType name="DRYGRASS_WINDROW">
+        <economy pricePerLitre="0.008" />
+    </fillType>
+
+    <!-- Maize/grass silage, on-farm nominal ~£32/t (density 0.45 kg/L) -->
+    <fillType name="SILAGE">
+        <economy pricePerLitre="0.014" />
+    </fillType>
+
+    <!-- UK wool, 2025 clip average ~75p/kg clean (density 0.76 kg/L) -->
+    <fillType name="WOOL">
+        <economy pricePerLitre="0.570" />
+    </fillType>
 </fillTypes>

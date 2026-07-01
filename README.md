@@ -13,8 +13,18 @@ The mod overrides the base game's `pricePerLitre` economy values for key arable 
 | Oilseed rape (canola) | `CANOLA` | ~£380/t |
 | Ware potatoes | `POTATO` | ~£175/t |
 | Sugar beet | `SUGARBEET` | AHDB contract reference price |
+| Milling oats | `OAT` | ~£220/t |
+| Feed maize | `MAIZE` | ~£180/t |
+| Sunflower seed | `SUNFLOWER` | ~£375/t (EU/import reference; not widely grown in the UK) |
+| Soybean | `SOYBEAN` | ~£400/t (EU/import reference; minimal UK production) |
+| Milk | `MILK` | ~40 ppl (UK farmgate average; highly volatile) |
+| Straw | `STRAW` | ~£100/t (GB big bale reference) |
+| Grass silage | `GRASS_WINDROW` | ~£32/t (on-farm feed value) |
+| Hay | `DRYGRASS_WINDROW` | ~£120/t |
+| Silage | `SILAGE` | ~£32/t (on-farm feed value) |
+| Wool | `WOOL` | ~75p/kg (2025 UK clip average) |
 
-Prices are defined in `FS25_UKPrices/data/fillTypes/fillTypes.xml`.
+Prices are defined in `FS25_UKPrices/data/fillTypes/fillTypes.xml`. Fill type names and `massPerLiter` densities used for the `pricePerLitre` conversions were verified against the base game's `data/maps/maps_fillTypes.xml`.
 
 ## Installation
 
