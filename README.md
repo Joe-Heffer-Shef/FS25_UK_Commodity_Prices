@@ -30,9 +30,9 @@ Prices are defined in `FS25_UKPrices/data/fillTypes/fillTypes.xml`. Fill type na
 
 ## Installation
 
-1. Download `FS25_UKPrices.zip` from the [Releases page](../../releases) (or zip the `FS25_UKPrices` folder yourself for a local dev build).
-2. Copy the zip file into your Farming Simulator 25 `mods` folder, e.g.:
-   - Windows: `Documents\My Games\FarmingSimulator2025\mods`
+1. Download [`FS25_UKPrices.zip` from the latest release](../../releases/latest/download/FS25_UKPrices.zip) (or zip the `FS25_UKPrices` folder yourself for a local dev build).
+2. Copy the zip file into your Farming Simulator 25 `mods` folder:
+   - Windows: `%USERPROFILE%\Documents\My Games\FarmingSimulator2025\mods`
 3. Launch Farming Simulator 25 and enable **UK Commodity Prices** in the mod selection screen when starting or loading a savegame.
 
 ## Development
