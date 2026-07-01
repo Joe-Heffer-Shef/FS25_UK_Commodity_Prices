@@ -32,4 +32,4 @@ Download `FS25_UK_Commodity_Prices.zip` from the new [GitHub Release](../../rele
 
 ## Optional: publishing to ModHub
 
-The mod can also be submitted to Giants Software's [ModHub](https://www.farming-simulator.com/mods) using the same release zip. Submissions are uploaded via the [ModHub upload page](https://modhub.giants-software.com/misc.php?page=misc). ModHub has its own submission requirements (naming, screenshots, icon, description) that are managed entirely on their site — check the current requirements there at upload time, since they are outside this repository's control.
+The mod can also be submitted to Giants Software's [ModHub](https://www.farming-simulator.com/mods) using the same release zip. See [docs/PUBLISHING.md](docs/PUBLISHING.md) for the full submission checklist and process.

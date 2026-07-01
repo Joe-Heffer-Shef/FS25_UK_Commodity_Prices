@@ -1,0 +1,65 @@
+# Publishing to GIANTS ModHub
+
+Steps for submitting a built release of this mod to [GIANTS ModHub](https://www.farming-simulator.com/mods), the official mod store for Farming Simulator 25. This is a separate step from cutting a GitHub release — see [RELEASING.md](../RELEASING.md) for that first.
+
+The authoritative, most-current reference for ModHub submission requirements is GIANTS' own **["A Modder's Guide to the ModHub"](https://www.farming-simulator.com/modHub/documents/moddersGuideToTheModHubEN.pdf)** (PDF, linked from [GDN downloads](https://gdn.giants-software.com/downloads.php)) and the pinned [ModHub Guidelines thread](https://forum.giants-software.com/viewtopic.php?t=209169) on the GIANTS forum. This guide summarises the parts relevant to this mod — check those sources directly if anything below seems out of date, since ModHub's submission page itself is behind a login and its exact fields can change between game patches.
+
+## Prerequisites
+
+- A GIANTS account (create one at [forum.giants-software.com](https://forum.giants-software.com/) or [gdn.giants-software.com](https://gdn.giants-software.com/)) — the same account works across the forum, GDN, and ModHub.
+
+## Before you upload
+
+Work through this checklist before starting a submission:
+
+1. **Cut and test a release first.** Follow [RELEASING.md](../RELEASING.md) to tag a version and produce `FS25_UK_Commodity_Prices.zip` via CI. Load the zip in-game and confirm it works before submitting to ModHub.
+2. **Check `modDesc.xml`:**
+   - `<version>` has been bumped for this release.
+   - `<title><en>` and `<description><en>` read well as store copy — ModHub uses these directly.
+   - `<multiplayer supported="true">` is present and accurate.
+   - `descVersion` matches what the current FS25 game build expects. This drifts with game patches — check in the GIANTS Editor or the current [GDN documentation](https://gdn.giants-software.com/documentation.php) rather than assuming a fixed number.
+3. **Icon assets — this mod is missing these today.** `modDesc.xml`'s `iconFilename` (`icon_FS25_UK_Commodity_Prices.dds`) only covers the in-game mod list. ModHub's store listing needs three *separate* icon files, per the Modder's Guide:
+
+   | Asset | Size | Format | Notes |
+   |---|---|---|---|
+   | ModIcon | 512×512 | DDS, BC1 | Centred on GIANTS' template background |
+   | StoreIcon | 512×512 | DDS, BC3/BC7 | Bottom-aligned, transparent background |
+   | BrandIcon | 512×256 | DDS, BC3/BC7 | |
+
+   These don't exist in this repo yet and need to be created (e.g. from a template in the Modder's Guide PDF) before the first ModHub submission.
+4. **Screenshots.** At least 3, at 1600×900. The first screenshot must show no UI. No AI-generated or externally-edited images — GIANTS has zero tolerance for this and will reject on sight.
+5. **Zip naming.** `FS25_UK_Commodity_Prices.zip` for a first submission (matches the existing convention). For an update to an already-published mod, use an `_update` suffix: `FS25_UK_Commodity_Prices_update.zip` (not `_upload`) — this lets GIANTS' testers distinguish the candidate build from the version already live.
+
+## Step-by-step upload
+
+1. Log in to [ModHub](https://modhub.giants-software.com/misc.php?page=misc).
+2. Go to the creator/upload area and select **Farming Simulator 25** as the target game.
+3. Upload the release zip along with the ModIcon, StoreIcon, and BrandIcon assets and your screenshots.
+4. Fill in the store listing: title, description, and category (pick the closest fit — this mod is a gameplay/economy tweak rather than a vehicle, building, or map).
+5. Submit for review.
+
+## Review process
+
+Submissions go through several stages before going live:
+
+**Self-Test** (GIANTS' TestRunner tool) → **Data Check** (metadata, structure, dependencies) → **PC Testing Queue** (functionality, visuals, playability) → **Console Testing Queue** → **Release**.
+
+New submissions and updates to already-published mods queue separately, and previously-tested mods generally clear faster. Once through the queue, release is often same-day, though it can take longer depending on queue volume.
+
+Common rejection reasons to avoid:
+- AI-generated or edited screenshots
+- Wrong screenshot count or resolution
+- Icon assets missing or not matching the spec above
+- `descVersion` mismatch with the current game build
+- Fantasy/placeholder brand names outside of maps (use "Lizard" as the placeholder brand if this ever comes up)
+
+## A note on console
+
+This mod ships a Lua script (`scripts/PriceOverride.lua`) to apply price overrides at runtime. Console submissions on ModHub restrict supplementary Lua scripts and non-base-game shaders. Whether this mod can be approved for console, or whether a script-free variant would be needed, is an open question for whoever submits it — this guide doesn't resolve it, since it depends on GIANTS' current console policy at submission time.
+
+## Publishing updates
+
+1. Bump `<version>` in `modDesc.xml`, tag, and release per [RELEASING.md](../RELEASING.md).
+2. On ModHub, go to the mod's existing listing (not a new submission) and use its "upload new version" flow, with the zip named using the `_update` suffix.
+3. Note what changed in the submission comment for testers — a short changelog is expected.
+4. Minor updates need at least a 4-week gap since the last release; this cooldown is waived for updates that fix a significant bug.
