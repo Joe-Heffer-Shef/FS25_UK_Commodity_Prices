@@ -37,12 +37,12 @@ Prices are set at runtime by `FS25_UK_Commodity_Prices/scripts/PriceOverride.lua
 
 ## Documentation
 
-See [docs/](docs/README.md) for contributor guides, release steps, and workshop setup notes.
+See [docs/](docs/) for contributor guides, release steps, and workshop setup notes.
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup and guidelines.
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for development setup and guidelines.
 
 ## Licence
 
-Released under the [MIT Licence](LICENSE).
+Released under the [MIT Licence](./LICENSE).
