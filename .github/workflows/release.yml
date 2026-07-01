@@ -1,0 +1,43 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*.*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build and publish release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install xmllint
+        run: sudo apt-get update && sudo apt-get install -y libxml2-utils
+
+      - name: Validate XML files are well-formed
+        run: |
+          find FS25_UKPrices -name '*.xml' -print0 | xargs -0 -n1 xmllint --noout
+
+      - name: Check tag matches modDesc.xml version
+        run: |
+          TAG_VERSION="${GITHUB_REF_NAME#v}"
+          MOD_VERSION="$(xmllint --xpath 'string(/modDesc/version)' FS25_UKPrices/modDesc.xml)"
+          echo "Tag version: $TAG_VERSION"
+          echo "modDesc.xml version: $MOD_VERSION"
+          if [ "$TAG_VERSION" != "$MOD_VERSION" ]; then
+            echo "::error::Tag version ($TAG_VERSION) does not match modDesc.xml version ($MOD_VERSION). Update modDesc.xml or fix the tag."
+            exit 1
+          fi
+
+      - name: Package mod
+        run: zip -r FS25_UKPrices.zip FS25_UKPrices
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: FS25_UKPrices.zip
+          generate_release_notes: true

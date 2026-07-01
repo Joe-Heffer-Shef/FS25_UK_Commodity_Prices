@@ -1,0 +1,35 @@
+name: Build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    name: Validate XML
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install xmllint
+        run: sudo apt-get update && sudo apt-get install -y libxml2-utils
+
+      - name: Validate XML files are well-formed
+        run: |
+          find FS25_UKPrices -name '*.xml' -print0 | xargs -0 -n1 xmllint --noout
+
+  build:
+    name: Build mod ZIP
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Package mod
+        run: zip -r FS25_UKPrices.zip FS25_UKPrices
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: FS25_UKPrices
+          path: FS25_UKPrices.zip
