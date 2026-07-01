@@ -20,12 +20,12 @@ jobs:
 
       - name: Validate XML files are well-formed
         run: |
-          find FS25_UKPrices -name '*.xml' -print0 | xargs -0 -n1 xmllint --noout
+          find FS25_UK_Commodity_Prices -name '*.xml' -print0 | xargs -0 -n1 xmllint --noout
 
       - name: Check tag matches modDesc.xml version
         run: |
           TAG_VERSION="${GITHUB_REF_NAME#v}"
-          MOD_VERSION="$(xmllint --xpath 'string(/modDesc/version)' FS25_UKPrices/modDesc.xml)"
+          MOD_VERSION="$(xmllint --xpath 'string(/modDesc/version)' FS25_UK_Commodity_Prices/modDesc.xml)"
           echo "Tag version: $TAG_VERSION"
           echo "modDesc.xml version: $MOD_VERSION"
           if [ "$TAG_VERSION" != "$MOD_VERSION" ]; then
@@ -34,10 +34,10 @@ jobs:
           fi
 
       - name: Package mod
-        run: cd FS25_UKPrices && zip -r ../FS25_UKPrices.zip .
+        run: cd FS25_UK_Commodity_Prices && zip -r ../FS25_UK_Commodity_Prices.zip .
 
       - name: Create release
         uses: softprops/action-gh-release@v3
         with:
-          files: FS25_UKPrices.zip
+          files: FS25_UK_Commodity_Prices.zip
           generate_release_notes: true

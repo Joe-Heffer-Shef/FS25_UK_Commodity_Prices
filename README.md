@@ -26,23 +26,18 @@ The mod overrides the base game's `pricePerLitre` economy values for key arable 
 | Silage | `SILAGE` | ~£32/t (on-farm feed value) |
 | Wool | `WOOL` | ~75p/kg (2025 UK clip average) |
 
-Prices are defined in `FS25_UKPrices/data/fillTypes/fillTypes.xml`. Fill type names and `massPerLiter` densities used for the `pricePerLitre` conversions were verified against the base game's `data/maps/maps_fillTypes.xml`.
+Prices are set at runtime by `FS25_UK_Commodity_Prices/scripts/PriceOverride.lua` once the game's economy has finished loading (XML-only fillType overrides are not applied for non-map mods).
 
 ## Installation
 
-1. Download [`FS25_UKPrices.zip` from the latest release](../../releases/latest/download/FS25_UKPrices.zip) (or zip the `FS25_UKPrices` folder yourself for a local dev build).
+1. Download [`FS25_UK_Commodity_Prices.zip` from the latest release](../../releases/latest/download/FS25_UK_Commodity_Prices.zip) (or zip the `FS25_UK_Commodity_Prices` folder yourself for a local dev build).
 2. Copy the zip file into your Farming Simulator 25 `mods` folder:
    - Windows: `%USERPROFILE%\Documents\My Games\FarmingSimulator2025\mods`
 3. Launch Farming Simulator 25 and enable **UK Commodity Prices** in the mod selection screen when starting or loading a savegame.
 
-## Development
+## Contributing
 
-The mod source lives in `FS25_UKPrices/`:
-
-- `modDesc.xml` — mod metadata (title, description, version).
-- `data/fillTypes/fillTypes.xml` — commodity price overrides.
-
-To update prices, edit `pricePerLitre` in `fillTypes.xml` and re-zip the `FS25_UKPrices` folder as `FS25_UKPrices.zip` for distribution.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup and guidelines.
 
 ## Licence
 

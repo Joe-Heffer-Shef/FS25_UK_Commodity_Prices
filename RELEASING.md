@@ -4,14 +4,14 @@ This project uses tag-triggered GitHub Releases via `.github/workflows/release.y
 
 ## Versioning
 
-Tags must follow `vMAJOR.MINOR.PATCH.BUILD` (e.g. `v1.2.0.0`) and must exactly match the `<version>` element in `FS25_UKPrices/modDesc.xml`. The release workflow fails the build if the tag and `modDesc.xml` version don't match.
+Tags must follow `vMAJOR.MINOR.PATCH.BUILD` (e.g. `v1.2.0.0`) and must exactly match the `<version>` element in `FS25_UK_Commodity_Prices/modDesc.xml`. The release workflow fails the build if the tag and `modDesc.xml` version don't match.
 
 ## Release steps
 
-1. Update `<version>` in `FS25_UKPrices/modDesc.xml`.
+1. Update `<version>` in `FS25_UK_Commodity_Prices/modDesc.xml`.
 2. Commit the version bump:
    ```
-   git add FS25_UKPrices/modDesc.xml
+   git add FS25_UK_Commodity_Prices/modDesc.xml
    git commit -m "Bump version to X.Y.Z.W"
    git push
    ```
@@ -23,12 +23,12 @@ Tags must follow `vMAJOR.MINOR.PATCH.BUILD` (e.g. `v1.2.0.0`) and must exactly m
 4. Pushing the tag triggers `.github/workflows/release.yml`, which:
    - Validates all XML files are well-formed.
    - Checks the tag version matches `modDesc.xml`.
-   - Zips the contents of `FS25_UKPrices/` into `FS25_UKPrices.zip`.
+   - Zips the contents of `FS25_UK_Commodity_Prices/` into `FS25_UK_Commodity_Prices.zip`.
    - Creates a GitHub Release with auto-generated notes and the zip attached.
 
 ## Verify the release
 
-Download `FS25_UKPrices.zip` from the new [GitHub Release](../../releases) and load it in Farming Simulator 25 to confirm it works before wider distribution.
+Download `FS25_UK_Commodity_Prices.zip` from the new [GitHub Release](../../releases) and load it in Farming Simulator 25 to confirm it works before wider distribution.
 
 ## Optional: publishing to ModHub
 
