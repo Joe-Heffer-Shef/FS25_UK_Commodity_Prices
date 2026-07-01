@@ -3,9 +3,10 @@ describe("UKPrices", function()
 
     setup(function()
         -- Stub FS25 globals referenced by PriceOverride.lua at load/apply time.
-        Mission00 = {}
+        -- Assigned via _G because busted sandboxes implicit globals per test file.
+        _G.Mission00 = {}
 
-        Utils = {
+        _G.Utils = {
             appendedFunction = function(base, appended)
                 if base == nil then
                     return appended
@@ -17,7 +18,7 @@ describe("UKPrices", function()
             end,
         }
 
-        Logging = {
+        _G.Logging = {
             warning = function(...) end,
         }
 
@@ -39,7 +40,7 @@ describe("UKPrices", function()
             -- WOOL intentionally omitted to exercise the "missing fillType" branch.
         }
 
-        g_fillTypeManager = {
+        _G.g_fillTypeManager = {
             getFillTypeByName = function(_, name)
                 return fillTypes[name]
             end,
