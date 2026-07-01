@@ -18,9 +18,21 @@ jobs:
         run: |
           find FS25_UK_Commodity_Prices -name '*.xml' -print0 | xargs -0 -n1 xmllint --noout
 
+  lint-lua:
+    name: Lint Lua
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install luacheck
+        run: sudo apt-get update && sudo apt-get install -y luarocks && sudo luarocks install luacheck
+
+      - name: Run luacheck
+        run: luacheck FS25_UK_Commodity_Prices/scripts
+
   build:
     name: Build mod ZIP
-    needs: validate
+    needs: [validate, lint-lua]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7

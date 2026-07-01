@@ -25,6 +25,7 @@ To update prices, edit the values in `UKPrices.PRICES_PER_LITER` in `PriceOverri
 - Verify fill type names and `massPerLiter` densities against the base game's `data/maps/maps_fillTypes.xml` before adding a new commodity.
 - Test changes in-game before submitting a pull request.
 - Keep `modDesc.xml` well-formed XML — the CI build validates this automatically.
+- Keep `PriceOverride.lua` lint-clean — the CI build runs `luacheck` automatically, and a lint failure will block your PR.
 
 ## Releasing
 
