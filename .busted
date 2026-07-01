@@ -1,0 +1,5 @@
+return {
+    _all = {
+        lpath = "FS25_UK_Commodity_Prices/scripts/?.lua",
+    },
+}
