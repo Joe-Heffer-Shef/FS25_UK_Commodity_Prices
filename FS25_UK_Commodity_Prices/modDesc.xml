@@ -4,9 +4,13 @@
     <version>1.1.0.0</version>
     <title>
         <en>UK Commodity Prices</en>
+        <de>UK-Rohstoffpreise</de>
+        <fr>Prix des matières premières au Royaume-Uni</fr>
     </title>
     <description>
         <en>Adjusts commodity prices to approximate UK market values.</en>
+        <de>Passt die Rohstoffpreise an, um sich den britischen Marktwerten anzunähern.</de>
+        <fr>Ajuste les prix des matières premières pour approcher les valeurs du marché britannique.</fr>
     </description>
     <iconFilename>icon_FS25_UK_Commodity_Prices.dds</iconFilename>
     <multiplayer supported="true" />
